@@ -1,3 +1,11 @@
+/*
+LeetCode: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+Difficulty: Medium
+Approach: Pivot-based Binary Search
+Time: O(log n)
+Space: O(1)
+*/
+
 package BinarySearch;
 
 public class LC153MinimumInRotatedSortedArray {
