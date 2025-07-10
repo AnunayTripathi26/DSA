@@ -11,7 +11,8 @@ public class LC1482 {
         System.out.println(minDays(bloomDay,  m,  k));
 
     }
-    static int minDays(int[] bloomDay, int m, int k) {
+
+     static int minDays(int[] bloomDay, int m, int k) {
         int result=-1;
         int start=bloomDay[0];
         for(int i:bloomDay){
@@ -19,9 +20,9 @@ public class LC1482 {
                 start=i;
             }
         }
-        int end=bloomDay[0];
+        int end=0;
         for(int i:bloomDay){
-            if (end<i){
+            if(i>end){
                 end=i;
             }
         }
@@ -34,17 +35,14 @@ public class LC1482 {
             else{
                 start=mid+1;
             }
-
-
         }
         return result;
-
     }
-    static boolean isPossible(int[] arr, int m, int k,int days){
+    static boolean isPossible(int [] bloomDay,int m,int k,int days){
         int bouquet=0;
         int flowers=0;
-        for(int i = 0; i<=arr.length-1; i++){
-            if(arr[i]<=days){
+        for(int i=0;i<=bloomDay.length-1;i++){
+            if(days>=bloomDay[i]){
                 flowers++;
                 if(flowers==k){
                     bouquet++;
@@ -55,12 +53,12 @@ public class LC1482 {
                 flowers=0;
             }
         }
-        if(bouquet>=m){
-            return true;
-        }
-        else{
+        if(bouquet<m){
             return false;
         }
-
+        else{
+            return true;
+        }
     }
+
 }
